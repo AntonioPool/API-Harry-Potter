@@ -2,13 +2,25 @@ const baseURL = 'https://potterapi-fedeperin.vercel.app/es'
 
 interface RequestOptions extends RequestInit{
     headers?: Record<string,string>
+    params?: Record<string, string | number>
 }
 
 const fetchClient = async <T>(
     endpoint: string,
     options: RequestOptions = {}
 ): Promise<T> =>{
-    const { headers, ...customConfig } = options
+    const { headers, params, ...customConfig } = options
+
+    let url = `${baseURL}${endpoint}`;
+    if (params && Object.keys(params).length > 0) {
+        const searchParams = new URLSearchParams();
+        Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined && value !== null) {
+            searchParams.append(key, String(value));
+        }
+        });
+        url += `?${searchParams.toString()}`;
+    }
 
     const config: RequestInit = {
         method: options.method || 'GET',
@@ -20,7 +32,7 @@ const fetchClient = async <T>(
     }
 
     try {
-        const response = await fetch(`${baseURL}${endpoint}`,config)
+        const response = await fetch(url,config)
 
         if(!response.ok){
             const errorData = await response.json().catch(() => ({}))

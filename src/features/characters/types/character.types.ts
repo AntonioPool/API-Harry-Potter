@@ -1,4 +1,4 @@
-export interface character{
+export interface Character{
     fullName: string;
     nickname: string;
     hogwartsHouse: string;
@@ -9,6 +9,8 @@ export interface character{
     index: number;
 }
 
-export interface apiResponse{
-    characters: character[]
+export interface Params{
+    index: number | null;
+    max: number | null;
+    page: number | null;
 }
