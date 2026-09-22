@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { View, Text, Animated, Pressable } from "react-native";
 import { Image } from "expo-image";
 import { router } from "expo-router";
-import { Sparkles, ChevronRight } from "lucide-react-native";
+import { ChevronRight } from "lucide-react-native";
 import { colors } from "../theme/colors";
 import { portadaStyles as styles } from "../theme/portadaStyles";
 
@@ -58,7 +58,7 @@ export default function Index() {
           <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
             <Pressable
               style={styles.enterButton}
-              onPress={() => router.push} // Reemplaza por la ruta de tu pantalla principal
+              onPress={() => router.push("/characters" as never)}
               onPressIn={onPressIn}
               onPressOut={onPressOut}
             >
