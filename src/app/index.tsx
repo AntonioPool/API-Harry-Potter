@@ -7,7 +7,7 @@ import { colors } from "../theme/colors";
 import { portadaStyles as styles } from "../theme/portadaStyles";
 
 const CASTLE_IMAGE =
-  "https://images.pexels.com/photos/34740455/pexels-photo-34740455.jpeg?auto=compress&cs=tinysrgb&h=1200&w=800";
+  "https://images.unsplash.com/photo-1656878564120-ab988c47f0b5?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 export default function Index() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -48,11 +48,6 @@ export default function Index() {
         <View style={styles.heroOverlay} />
 
         <View style={styles.heroContent}>
-          <View style={styles.badge}>
-            <Sparkles size={14} color={colors.gold[300]} />
-            <Text style={styles.badgeText}>Bienvenido al mundo mágico</Text>
-          </View>
-
           <Text style={styles.title}>El Mundo</Text>
           <Text style={styles.titleAccent}>Mágico</Text>
 
@@ -67,7 +62,7 @@ export default function Index() {
               onPressIn={onPressIn}
               onPressOut={onPressOut}
             >
-              <Text style={styles.enterButtonText}>Comenzar aventura</Text>
+              <Text style={styles.enterButtonText}>Explorar</Text>
               <ChevronRight size={20} color={colors.neutral[50]} strokeWidth={2.5} />
             </Pressable>
           </Animated.View>
