@@ -6,7 +6,7 @@ import { CharactersRepository } from "@/features/characters/repository/character
 import { Character } from "@/features/characters/types/character.types";
 import { colors } from "@/theme/colors";
 import { spacing } from "@/theme/spacing";
-import { characterDetailStyles as styles } from "@/theme/screenStyles";
+import { characterDetailStyles as styles } from "@/theme/characterDetailStyles";
 
 const repository = new CharactersRepository();
 

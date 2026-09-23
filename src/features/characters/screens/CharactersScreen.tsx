@@ -4,7 +4,7 @@ import { Search } from "lucide-react-native";
 import { useCharacters } from "@/features/characters/hooks/useCharacters";
 import { Character } from "@/features/characters/types/character.types";
 import { colors } from "@/theme/colors";
-import { charactersListStyles as styles } from "@/theme/screenStyles";
+import { charactersListStyles as styles } from "@/theme/charactersListStyles";
 
 interface Props {
   onSelect: (index: number) => void;
